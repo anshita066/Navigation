@@ -1,7 +1,6 @@
 package com.example.navigation.Fragment
 
 import android.content.Context
-import android.content.SharedPreferences
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -60,7 +59,7 @@ class SplashFragment : Fragment() {
     }
 
     private fun isUserLoggedIn(): Boolean {
-        val sharedPreferences = activity?.getSharedPreferences(SharedPreferences.Editor, Context.MODE_PRIVATE)
+        val sharedPreferences = activity?.getSharedPreferences(MainActivity.MY_PREFERENCES, Context.MODE_PRIVATE)
         val name = sharedPreferences?.getString(MainActivity.NAME_KEY, "")
         return name != ""
     }
